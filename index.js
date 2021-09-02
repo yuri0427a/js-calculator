@@ -1,23 +1,23 @@
-myTotal = 0;
-myInput = "";
-myCalc = "+";
-myFlg = 1;
+let myTotal = 0;
+let myInput = "";
+let myCalc = "+";
+let myFlg = 1;
 
-function myValue(myData) {
+window.myValue =function myValue(myData) {
     myFlg = 0;
     myInput += myData;
     document.myForm.myLine.value = myInput;
 }
 
-function myCalculate(myData) {
+window.myCalculate =　function myCalculate(myData) {
     if (myFlg == 0) {
         myFlg = 1;
-        myWork = myTotal + myCalc + myInput;
-        myTotal = Function(myWork)();
+        let myWork = myTotal + myCalc + myInput;
+        myTotal = eval(myWork);
         myInput = "";
         document.myForm.myLine.value = myTotal;
     }
-    if (myDate == "=") {
+    if (myData == "=") {
         myTotal = 0;
         myCalc = "+";
     } else {
@@ -26,7 +26,7 @@ function myCalculate(myData) {
 }
 
 
-function myC() {
+window.myC = function myC() {
     myTotal = 0;
     myCalc = "+";
     myInput = "";
